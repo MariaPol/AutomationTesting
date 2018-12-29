@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Alltests">
+	<test name="signUp">  
+		<classes>
+			<class name="alltests.Test" />
+			<class name="alltests.SignUp" />
+		</classes>
+	</test>
+	<test name="signIn">
+		<classes>
+			<class name="alltests.Test" />
+			<class name="alltests.SignIn" />
+		</classes>
+	</test>
+</suite>
