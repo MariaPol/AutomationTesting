@@ -24,7 +24,7 @@ public class SignUp {
 
 	public void typeValues() {
 		Wdriver.driver.findElement(By.cssSelector("#ap_customer_name")).sendKeys("username");
-		Wdriver.driver.findElement(By.cssSelector("#ap_email")).sendKeys("emailasds.com");
+		Wdriver.driver.findElement(By.cssSelector("#ap_email")).sendKeys("email@sdasds.com");
 		Wdriver.driver.findElement(By.cssSelector("#ap_password")).sendKeys("12rr54fd");
 		Wdriver.driver.findElement(By.cssSelector("#ap_password_check")).sendKeys("12rr54fd");
 	}
