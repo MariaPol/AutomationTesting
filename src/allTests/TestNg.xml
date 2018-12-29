@@ -2,14 +2,22 @@
 <suite name="Alltests">
 	<test name="signUp">  
 		<classes>
-			<class name="alltests.Test" />
-			<class name="alltests.SignUp" />
+			<class name="allTests.Test" />
+			<class name="allTests.SignUp" />
 		</classes>
 	</test>
 	<test name="signIn">
 		<classes>
-			<class name="alltests.Test" />
-			<class name="alltests.SignIn" />
+			<class name="allTests.Test" />
+			<class name="allTests.SignIn" />
+		</classes>
+	</test>
+	<test name="cart">
+		<classes>
+			<class name="allTests.Test" />
+			<class name="allTests.FindProduct" />
+			<class name="allTests.AddToCart" />
+			<class name="allTests.CheckCart" />
 		</classes>
 	</test>
 </suite>
