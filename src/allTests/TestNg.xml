@@ -1,6 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Alltests">
-	<test name="signUp">  
+
+	<test name="signUp">
 		<classes>
 			<class name="allTests.Test" />
 			<class name="allTests.SignUp" />
@@ -12,12 +13,17 @@
 			<class name="allTests.SignIn" />
 		</classes>
 	</test>
-	<test name="cart">
+	<test name="searchProduct">
 		<classes>
 			<class name="allTests.Test" />
 			<class name="allTests.FindProduct" />
-			<class name="allTests.AddToCart" />
+		</classes>
+	</test>
+	<test name="cart">
+		<classes>
+			<class name="allTests.Test" />
 			<class name="allTests.CheckCart" />
 		</classes>
 	</test>
+
 </suite>
