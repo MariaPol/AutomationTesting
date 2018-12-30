@@ -17,7 +17,7 @@ public class SignUp {
 	}
 
 	@Test(priority = 1)
-	public void gotoSignUp() {
+	public void goToSignUp() {
 		Wdriver.driver.findElement(By.cssSelector("#nav-link-accountList")).click();
 		Wdriver.driver.findElement(By.cssSelector("#createAccountSubmit")).click();
 		Assert.assertEquals(Wdriver.driver.getTitle(), "Amazon Registration");
@@ -26,13 +26,13 @@ public class SignUp {
 
 	public void typeValues() {
 		Wdriver.driver.findElement(By.cssSelector("#ap_customer_name")).sendKeys("username");
-		Wdriver.driver.findElement(By.cssSelector("#ap_email")).sendKeys("email@sdasds.com");
+		Wdriver.driver.findElement(By.cssSelector("#ap_email")).sendKeys("emailsdasds.com");
 		Wdriver.driver.findElement(By.cssSelector("#ap_password")).sendKeys("bfb#f5dBfd");
 		Wdriver.driver.findElement(By.cssSelector("#ap_password_check")).sendKeys("bfb#f5dBfd");
 	}
 
 	@Test(priority = 2)
-	public void checkIfIstNull() {
+	public void ifIstNull() {
 		Assert.assertEquals(
 				Wdriver.driver.findElement(By.cssSelector("#ap_customer_name")).getAttribute("value").isEmpty(), false);
 		Assert.assertEquals(Wdriver.driver.findElement(By.cssSelector("#ap_email")).getAttribute("value").isEmpty(),
@@ -45,7 +45,7 @@ public class SignUp {
 	}
 
 	@Test(priority = 3)
-	public void checkEmail() {
+	public void validEmail() {
 		Assert.assertEquals(isValidEmailAddress(), true);
 	}
 
@@ -62,7 +62,7 @@ public class SignUp {
 	}
 
 	@Test(priority = 4)
-	public void checkPassword6Len() {
+	public void passHas6Len() {
 		int pass = Wdriver.driver.findElement(By.cssSelector("#ap_password")).getAttribute("value").length();
 		String result;
 		if (pass >= 6) {
@@ -73,7 +73,7 @@ public class SignUp {
 	}
 
 	@Test(priority = 5)
-	public void checkPasswordNum() {
+	public void passHasNum() {
 		String pass = Wdriver.driver.findElement(By.cssSelector("#ap_password")).getAttribute("value");
 		boolean result = pass.matches(".*\\d+.*");
 
@@ -81,7 +81,7 @@ public class SignUp {
 	}
 
 	@Test(priority = 6)
-	public void checkPasswordSpChar() {
+	public void passHasSpChar() {
 		String pass = Wdriver.driver.findElement(By.cssSelector("#ap_password")).getAttribute("value");
 		Pattern p = Pattern.compile("[^A-Za-z0-9]");
 		Matcher m = p.matcher(pass);
@@ -91,7 +91,7 @@ public class SignUp {
 	}
 
 	@Test(priority = 7)
-	public void checkPasswordUp() {
+	public void passHasUp() {
 		String pass = Wdriver.driver.findElement(By.cssSelector("#ap_password")).getAttribute("value");
 		boolean result = checkForUp(pass);
 		Assert.assertEquals(result, true);
@@ -112,14 +112,14 @@ public class SignUp {
 	}
 
 	@Test(priority = 8)
-	public void checkPasswordsMatch() {
+	public void passwordsMatch() {
 		String pass = Wdriver.driver.findElement(By.cssSelector("#ap_password")).getAttribute("value");
 		String repass = Wdriver.driver.findElement(By.cssSelector("#ap_password_check")).getAttribute("value");
 		Assert.assertEquals(pass, repass);
 	}
 
 	@Test(priority = 9)
-	public void signUp() {
+	public void submitSignUp() {
 		Wdriver.driver.findElement(By.cssSelector("#continue")).click();
 		Assert.assertEquals(Wdriver.driver.getTitle(), "Please confirm your identity");
 	}

@@ -11,7 +11,7 @@ public class CheckCart {
 	boolean assertsEnabled = false;
 
 	@Test(priority = 1)
-	public void checkCard() {
+	public void goToCard() {
 		productTitle = Wdriver.driver.findElement(By.cssSelector("#productTitle")).getText();
 		addProductToCart();
 		Wdriver.driver.findElement(By.cssSelector("#nav-cart")).click();
@@ -19,7 +19,7 @@ public class CheckCart {
 	}
 
 	@Test(priority = 2)
-	public void checkIfExcist() {
+	public void ifProductExcist() {
 		makeListOfProducts();
 	}
 
