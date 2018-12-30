@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class SignIn {
-	
+
 	@Test(priority = 1)
 	public void gotoSignIn() {
 		Wdriver.driver.get(Wdriver.appUrl);

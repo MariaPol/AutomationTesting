@@ -1,13 +1,12 @@
 package allTests;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 
 public class SignUp {
 	@Test(priority = 0)
@@ -73,53 +72,53 @@ public class SignUp {
 		Assert.assertEquals(result, "true");
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 5)
 	public void checkPasswordNum() {
 		String pass = Wdriver.driver.findElement(By.cssSelector("#ap_password")).getAttribute("value");
 		boolean result = pass.matches(".*\\d+.*");
 
 		Assert.assertEquals(result, true);
 	}
-	
-	@Test(priority = 4)
+
+	@Test(priority = 6)
 	public void checkPasswordSpChar() {
 		String pass = Wdriver.driver.findElement(By.cssSelector("#ap_password")).getAttribute("value");
 		Pattern p = Pattern.compile("[^A-Za-z0-9]");
-	    Matcher m = p.matcher(pass);
-	    boolean result = m.find();
-	    
+		Matcher m = p.matcher(pass);
+		boolean result = m.find();
+
 		Assert.assertEquals(result, true);
 	}
-	
-	@Test(priority = 4)
+
+	@Test(priority = 7)
 	public void checkPasswordUp() {
 		String pass = Wdriver.driver.findElement(By.cssSelector("#ap_password")).getAttribute("value");
 		boolean result = checkForUp(pass);
 		Assert.assertEquals(result, true);
 	}
-	
+
 	private static boolean checkForUp(String str) {
-	    char ch;
-	    boolean found = false;
-	    for(int i=0;i < str.length();i++) {
-	        ch = str.charAt(i);
-	        if (Character.isUpperCase(ch)) {
-	        	found = true;
-	        }
-	        if(found)
-	            return true;
-	    }
-	    return false;
+		char ch;
+		boolean found = false;
+		for (int i = 0; i < str.length(); i++) {
+			ch = str.charAt(i);
+			if (Character.isUpperCase(ch)) {
+				found = true;
+			}
+			if (found)
+				return true;
+		}
+		return false;
 	}
-	
-	@Test(priority = 5)
+
+	@Test(priority = 8)
 	public void checkPasswordsMatch() {
 		String pass = Wdriver.driver.findElement(By.cssSelector("#ap_password")).getAttribute("value");
 		String repass = Wdriver.driver.findElement(By.cssSelector("#ap_password_check")).getAttribute("value");
 		Assert.assertEquals(pass, repass);
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 9)
 	public void signUp() {
 		Wdriver.driver.findElement(By.cssSelector("#continue")).click();
 		Assert.assertEquals(Wdriver.driver.getTitle(), "Please confirm your identity");
