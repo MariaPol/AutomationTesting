@@ -23,7 +23,7 @@ public class CheckCart {
 	}
 
 	public void addProductToCart() {
-		Wdriver.driver.findElement(By.cssSelector("#add-to-cart-button-ubb")).click();
+		Wdriver.driver.findElement(By.cssSelector("#add-to-cart-button")).click();
 	}
 
 	public void makeListOfProducts() {
@@ -34,6 +34,8 @@ public class CheckCart {
 			List<WebElement> myElements = Wdriver.driver.findElements(allProducts);
 			for (WebElement e : myElements) {
 				System.out.println(e.getText());
+				System.out.println(productTitle);
+
 				if(e.getText() == productTitle){
 					Assert.assertTrue(found);
 				}

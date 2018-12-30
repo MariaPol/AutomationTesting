@@ -8,7 +8,7 @@ public class SignIn {
 	
 	@Test(priority = 1)
 	public void gotoSignIn() {
-		Wdriver.driver.findElement(By.className("a-link-nav-icon")).click();
+		Wdriver.driver.get(Wdriver.appUrl);
 		Wdriver.driver.findElement(By.cssSelector("#nav-link-accountList")).click();
 		Assert.assertEquals(Wdriver.driver.getTitle(), "Amazon Sign In");
 	}
